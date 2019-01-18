@@ -30,10 +30,10 @@ function toWord_id(input){
 				' Kuadriliun ', ' Kuintiliun ', ' Sekstiliun ', ' Septiliun ', ' Oktiliun ', ' Noniliun ', ' Desiliun ' ];
 	var small_units = [' Puluh ', ' Ratus '];
 	var special_unit = ' Belas ';
-	var special_naming = ['Sepuluh ', 'Sebelas ', 'Seratus ', 'Seribu '];
+	var special_namings = ['Sepuluh ', 'Sebelas ', 'Seratus ', 'Seribu '];
 
-	var value = input.toString().split('.');
-	var digits = value[0].split('');
+	var values = input.toString().split('.');
+	var digits = values[0].split('');
 
 	if(digits[0] == '-'){
 		digits.shift();
@@ -47,7 +47,7 @@ function toWord_id(input){
 			if(parseInt(digits[i]) == 0){
 				continue;
 			}else if(parseInt(digits[i]) == 1){ //#1
-				output += special_naming[2];
+				output += special_namings[2];
 			}else{
 				output += numbers[parseInt(digits[i])] + small_units[1];
 			}
@@ -59,9 +59,9 @@ function toWord_id(input){
 			}else if(parseInt(digits[i]) == 1){ //#2
 				
 				if(parseInt(digits[i+1]) == 0){ //#2.a
-					output += special_naming[0];
+					output += special_namings[0];
 				}else if(parseInt(digits[i+1]) == 1){ //#2.b
-					output += special_naming[1];
+					output += special_namings[1];
 				}else{ //#2.c
 					output += numbers[parseInt(digits[i+1])] + special_unit;
 				}
@@ -76,7 +76,7 @@ function toWord_id(input){
 				
 				if((parseInt(digits[i]) == 1 && i == 0 && digits.length == 4) 
 				|| (parseInt(digits[i]) == 1 && parseInt(digits[i-1]) == 0 && parseInt(digits[i-2]) == 0 && digits.length - i == 4) ){ //#4
-					output += special_naming[3];
+					output += special_namings[3];
 				}else if(parseInt(digits[i]) != 0 && parseInt(digits[i-1]) != 1){
 					output += numbers[parseInt(digits[i])] + units[((digits.length - 1 - i)/3)-1];
 				}else if(parseInt(digits[i-2]) != 0){
