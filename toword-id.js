@@ -96,8 +96,8 @@ function toWord_id(input){
 
 	}
 
-	if(value[1] != null){
-		var decimals = value[1].split('');
+	if(values[1] != null){
+		var decimals = values[1].split('');
 		output += ' Koma '
 		for (var i = 0; i < decimals.length; i++) {
 			output += numbers[parseInt(decimals[i])] +' '; //#5
