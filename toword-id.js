@@ -17,7 +17,7 @@ Description	: convert number to indonesian words
 		#5	: any digits after point in decimal number are spelled as is, without applying units.
 -------------------------------------------------------------------------------------------------------------------------------*/
 
-function toWord(input){
+function toWord_id(input){
 
 	if(isNaN(input)){
 		return 'Bukan angka';

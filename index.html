@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toWord-id</title>
+	<script type="text/javascript" src="toword-id.js"></script>
+</head>
+<body>
+	
+	<input id="number" type="number" name="angka" onkeyup="convert(this)">
+	<p id="word"></p>
+
+	<script type="text/javascript">
+	
+		function convert(input){
+			document.getElementById('word').innerHTML = toWord_id(input.value);
+		}
+	
+	</script>
+
+</body>
+</html>
